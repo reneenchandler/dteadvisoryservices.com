@@ -234,7 +234,7 @@ footer .lbl{color:#7E9189}
   <div class="wrap">
     <div class="sec-head">
       <span class="lbl">What I build</span>
-      <h2>Most NetSuite problems are accounting problems in a technical costume.</h2>
+      <h2>You know where you need to end up. Getting there is my problem.</h2>
     </div>
     <div class="caps">
       <div class="cap">
@@ -324,8 +324,6 @@ footer .lbl{color:#7E9189}
     <p>Send the short version &mdash; the record type, the error, or the report that won't tie out. I'll tell you whether it's a two-hour fix or a project, and what it would take either way.</p>
     <div class="actions">
       <a class="btn" href="mailto:renee@dteadvisoryservices.com?subject=NetSuite%20project">renee@dteadvisoryservices.com</a>
-      <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=renee@dteadvisoryservices.com&amp;su=NetSuite%20project" target="_blank" rel="noopener">Open in Gmail</a>
-      <a class="btn ghost" id="copymail" href="#" data-mail="renee@dteadvisoryservices.com">Copy address</a>
       <a class="btn ghost" href="tel:+19316298765">931.629.8765</a>
     </div>
   </div>
@@ -337,22 +335,5 @@ footer .lbl{color:#7E9189}
     <span class="lbl">NetSuite consulting &amp; development</span>
   </div>
 </footer>
-
-<script>
-(function(){
-  var b=document.getElementById('copymail');
-  if(!b)return;
-  b.addEventListener('click',function(e){
-    e.preventDefault();
-    var t=b.textContent;
-    navigator.clipboard.writeText(b.dataset.mail).then(function(){
-      b.textContent='Copied';
-      setTimeout(function(){b.textContent=t;},1800);
-    }).catch(function(){
-      b.textContent=b.dataset.mail;
-    });
-  });
-})();
-</script>
 </body>
 </html>
