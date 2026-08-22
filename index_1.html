@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renee Chandler, MBA — DTE Advisory Services | NetSuite Consultant &amp; Developer</title>
+<meta name="description" content="NetSuite consultant and developer. SuiteScript 2.1, SuiteQL, WMS and Ship Central, OneWorld migrations, close automation. Former CFO and CPA who writes production code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EE;
+  --paper-2:#E5EAE6;
+  --ink:#0F1613;
+  --ink-soft:#41504A;
+  --rule:#C6D0C9;
+  --green:#1F5C46;
+  --tick:#8E2C22;
+  --cell:#DCE6DE;
+  --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --serif:"Bodoni Moda",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(20px,5vw,56px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px;margin:0 auto;padding:0 var(--pad)}
+a{color:inherit}
+
+/* ---------- utility type ---------- */
+.lbl{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- top bar ---------- */
+.topbar{border-bottom:1px solid var(--rule)}
+.topbar .wrap{
+  display:flex;flex-wrap:wrap;gap:10px 24px;
+  align-items:center;justify-content:space-between;
+  padding-top:16px;padding-bottom:16px;
+}
+.mark{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.mark span{color:var(--green)}
+.status{display:flex;align-items:center;gap:8px}
+.tick{color:var(--tick);font-family:var(--mono);font-weight:700;font-size:13px;line-height:1}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(44px,8vw,96px) 0 clamp(36px,6vw,64px)}
+.hero h1{
+  font-family:var(--serif);font-weight:500;font-style:normal;
+  font-size:clamp(46px,11.5vw,104px);line-height:.94;
+  letter-spacing:-.015em;margin:0 0 6px;
+}
+.hero h1 em{font-style:italic;font-weight:400}
+.deck{
+  font-size:clamp(19px,2.6vw,26px);line-height:1.35;
+  max-width:22ch;margin:22px 0 0;color:var(--ink);
+}
+.deck b{font-weight:600;color:var(--green)}
+
+/* ---------- record grid (signature) ---------- */
+.record{margin-top:clamp(34px,5vw,54px);border-top:1px solid var(--rule)}
+.row{
+  display:grid;grid-template-columns:150px 1fr;gap:0 28px;
+  border-bottom:1px solid var(--rule);
+  padding:13px 10px 13px 10px;margin:0 -10px;
+  transition:background .16s ease;
+}
+.row:hover,.row:focus-within{background:var(--cell)}
+.row dt{padding-top:3px}
+.row dd{margin:0;font-size:16px;line-height:1.5}
+.row dd .mono{font-family:var(--mono);font-size:14px}
+dl{margin:0}
+
+/* ---------- buttons ---------- */
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;
+  padding:14px 22px;border:1px solid var(--ink);border-radius:2px;
+  background:var(--ink);color:var(--paper);
+  transition:background .16s ease,color .16s ease,transform .16s ease;
+}
+.btn:hover{background:var(--green);border-color:var(--green);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
+a:focus-visible,.row:focus-within{outline:2px solid var(--green);outline-offset:3px}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(52px,8vw,92px) 0;border-top:1px solid var(--rule)}
+.sec-head{margin-bottom:clamp(28px,4vw,44px)}
+.sec-head h2{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-.01em;
+  margin:10px 0 0;max-width:20ch;
+}
+
+/* ---------- capability blocks ---------- */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.cap{background:var(--paper);padding:26px 24px 30px}
+.cap h3{
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--green);margin:0 0 12px;
+}
+.cap p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+
+/* ---------- how ---------- */
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,44px)}
+.how p{margin:0;font-size:16.5px;line-height:1.6}
+.how .lbl{display:block;margin-bottom:10px;color:var(--tick)}
+
+/* ---------- timeline ---------- */
+.tl{border-top:1px solid var(--rule)}
+.tl-row{
+  display:grid;grid-template-columns:130px 1fr;gap:4px 28px;
+  padding:18px 0;border-bottom:1px solid var(--rule);
+}
+.tl-row .yr{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--green);padding-top:3px}
+.tl-row .org{font-weight:600;font-size:17px}
+.tl-row .role{color:var(--ink-soft);font-size:15.5px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--paper);margin-top:0}
+.contact .wrap{padding-top:clamp(56px,8vw,96px);padding-bottom:clamp(56px,8vw,96px)}
+.contact h2{
+  font-family:var(--serif);font-weight:500;font-size:clamp(34px,7vw,64px);
+  line-height:1.02;margin:12px 0 20px;max-width:16ch;
+}
+.contact .lbl{color:#8FA69B}
+.contact p{max-width:46ch;color:#C8D3CC;margin:0 0 30px;font-size:17px}
+.contact .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.contact .btn:hover{background:var(--green);border-color:var(--green);color:var(--paper)}
+.contact .btn.ghost{background:transparent;color:var(--paper);border-color:#3C4A44}
+.contact .btn.ghost:hover{border-color:var(--paper);color:var(--paper)}
+
+footer{background:var(--ink);color:#7E9189;border-top:1px solid #263029}
+footer .wrap{
+  display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  padding-top:22px;padding-bottom:34px;
+}
+footer .lbl{color:#7E9189}
+
+/* ---------- load motion ---------- */
+.up{opacity:0;transform:translateY(10px);animation:up .7s cubic-bezier(.2,.7,.3,1) forwards}
+.up:nth-child(1){animation-delay:.05s}
+.up:nth-child(2){animation-delay:.12s}
+.up:nth-child(3){animation-delay:.19s}
+.up:nth-child(4){animation-delay:.26s}
+.up:nth-child(5){animation-delay:.33s}
+@keyframes up{to{opacity:1;transform:none}}
+
+@media (max-width:640px){
+  .row{grid-template-columns:1fr;gap:4px}
+  .row dt{padding-top:0}
+  .tl-row{grid-template-columns:1fr;gap:2px}
+  .deck{max-width:none}
+  .btn{flex:1 1 100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .up{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="mark">DTE Advisory <span>/</span> Services</div>
+    <div class="status lbl"><span class="tick">&#10003;</span> Available for new engagements</div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="up">Renee<br>Chandler<em>, MBA</em></h1>
+    <p class="deck up">NetSuite consultant and developer. <b>Former CFO and CPA who writes production code.</b></p>
+
+    <dl class="record">
+      <div class="row">
+        <dt class="lbl">Focus</dt>
+        <dd>NetSuite development, implementation, and financial operations</dd>
+      </div>
+      <div class="row">
+        <dt class="lbl">Stack</dt>
+        <dd><span class="mono">SuiteScript 2.1 &middot; SuiteQL &middot; Advanced PDF/HTML &middot; WMS &amp; Ship Central &middot; SuiteCommerce</span></dd>
+      </div>
+      <div class="row">
+        <dt class="lbl">Credentials</dt>
+        <dd>MBA &middot; CPA, Tennessee (inactive) &middot; 17+ years as a NetSuite administrator</dd>
+      </div>
+      <div class="row">
+        <dt class="lbl">Engagement</dt>
+        <dd>Independent 1099 &mdash; direct with clients or subcontracted through partners</dd>
+      </div>
+      <div class="row">
+        <dt class="lbl">Based</dt>
+        <dd>Tennessee &mdash; remote, U.S. clients</dd>
+      </div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn" href="mailto:reneec@lorettotel.net?subject=NetSuite%20project">Email Renee</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/chandlerrn" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">What I build</span>
+      <h2>Most NetSuite problems are accounting problems in a technical costume.</h2>
+    </div>
+    <div class="caps">
+      <div class="cap">
+        <h3>Development</h3>
+        <p>Production SuiteScript 2.1 &mdash; user event, client, scheduled, Map/Reduce, RESTlets, Suitelets. Legacy 1.0 and 2.0 upgrades. SuiteQL that returns before it times out. Advanced PDF/HTML templates that match the spec on the first proof.</p>
+      </div>
+      <div class="cap">
+        <h3>Implementation &amp; migration</h3>
+        <p>OneWorld rollouts, subsidiary and multi-currency setup, data migration, and integrations to WMS, eCommerce, and third-party systems. Storefronts on SuiteCommerce, WooCommerce, and Shopify wired back to NetSuite.</p>
+      </div>
+      <div class="cap">
+        <h3>Warehouse &amp; fulfillment</h3>
+        <p>WMS and Ship Central configuration, mobile process flows, bin and inventory strategy, dropship routing, and 3PL automation for teams shipping real volume.</p>
+      </div>
+      <div class="cap">
+        <h3>Close &amp; reporting</h3>
+        <p>Month-end close automation, reconciliations, reporting packages, and saved searches your finance team can maintain after I'm gone. Built by someone who has signed the financials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">How I work</span>
+      <h2>Scoped in hours. Handed over in full.</h2>
+    </div>
+    <div class="how">
+      <p><span class="lbl">Estimates</span>Work is scoped and quoted in hours against a written spec, so you can see what you're buying before it starts.</p>
+      <p><span class="lbl">Ownership</span>You get the source. Commented, config-driven, and documented, so your next administrator isn't reverse-engineering it.</p>
+      <p><span class="lbl">Straight answers</span>If native functionality already does it, I'll say so &mdash; before writing a script you'd have to maintain forever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Background</span>
+      <h2>Twenty-plus years running the departments I now build systems for.</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-row">
+        <div class="yr">2022 &mdash;</div>
+        <div>
+          <div class="org">DTE Advisory Services</div>
+          <div class="role">Principal &mdash; NetSuite consultant and developer</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="yr">2008 &ndash; 2022</div>
+        <div>
+          <div class="org">Renovation Brands / Net Direct Merchants</div>
+          <div class="role">CFO &rarr; Chief Accounting Officer &rarr; Director of Operations</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="yr">2007 &ndash; 2011</div>
+        <div>
+          <div class="org">University of North Alabama</div>
+          <div class="role">Adjunct professor, computer information systems</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="yr">1996 &ndash; 2007</div>
+        <div>
+          <div class="org">Lawrenceburg Utility Systems</div>
+          <div class="role">Chief Financial Officer</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="yr">1993 &ndash; 1996</div>
+        <div>
+          <div class="org">DataQuest Corporation</div>
+          <div class="role">Software technician</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <span class="lbl">Contact</span>
+    <h2>Tell me what's broken.</h2>
+    <p>Send the short version &mdash; the record type, the error, or the report that won't tie out. I'll tell you whether it's a two-hour fix or a project, and what it would take either way.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:reneec@lorettotel.net?subject=NetSuite%20project">reneec@lorettotel.net</a>
+      <a class="btn ghost" href="tel:+19316298765">931.629.8765</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="lbl">DTE Advisory Services &mdash; Tennessee</span>
+    <span class="lbl">NetSuite consulting &amp; development</span>
+  </div>
+</footer>
+
+</body>
+</html>
