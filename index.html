@@ -30,7 +30,7 @@ body{
   font-family:var(--sans);font-size:17px;line-height:1.55;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1060px;margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
 a{color:inherit}
 
 /* ---------- utility type ---------- */
@@ -47,15 +47,15 @@ a{color:inherit}
   padding-top:16px;padding-bottom:16px;
 }
 .mark{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.mark span{color:var(--green)}
 .status{display:flex;align-items:center;gap:8px}
 .tick{color:var(--tick);font-family:var(--mono);font-weight:700;font-size:13px;line-height:1}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(44px,8vw,96px) 0 clamp(36px,6vw,64px)}
+.hero-top{display:grid;grid-template-columns:1fr}
 .hero h1{
   font-family:var(--serif);font-weight:600;
-  font-size:clamp(42px,11vw,108px);line-height:1.0;
+  font-size:clamp(42px,11vw,120px);line-height:1.0;
   letter-spacing:-.02em;margin:0 0 6px;
   overflow-wrap:break-word;padding-bottom:.05em;
 }
@@ -70,6 +70,14 @@ a{color:inherit}
   max-width:27ch;margin:22px 0 0;color:var(--ink);
 }
 .deck b{font-weight:600;color:var(--green)}
+
+@media (min-width:900px){
+  .hero-top{
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:0 clamp(36px,5vw,80px);align-items:end;
+  }
+  .hero-top .deck{margin:0 0 .55em;max-width:24ch}
+}
 
 /* ---------- record grid (signature) ---------- */
 .record{margin-top:clamp(34px,5vw,54px);border-top:1px solid var(--rule)}
@@ -110,7 +118,7 @@ a:focus-visible,.row:focus-within{outline:2px solid var(--green);outline-offset:
 }
 
 /* ---------- capability blocks ---------- */
-.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
 .cap{background:var(--paper);padding:26px 24px 30px}
 .cap h3{
   font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;
@@ -180,15 +188,17 @@ footer .lbl{color:#7E9189}
 
 <div class="topbar">
   <div class="wrap">
-    <div class="mark">DTE Advisory <span>/</span> Services</div>
+    <div class="mark">DTE Advisory Services</div>
     <div class="status lbl"><span class="tick">&#10003;</span> Available for new engagements</div>
   </div>
 </div>
 
 <header class="hero">
   <div class="wrap">
-    <h1 class="up">Renee<br>Chandler <span class="post">MBA</span></h1>
-    <p class="deck up">NetSuite consultant and developer. <b>Former CFO and CPA who writes production code.</b></p>
+    <div class="hero-top">
+      <h1 class="up">Renee<br>Chandler <span class="post">MBA</span></h1>
+      <p class="deck up">NetSuite consultant and developer. <b>Former CFO and CPA who writes production code.</b></p>
+    </div>
 
     <dl class="record">
       <div class="row">
@@ -314,6 +324,8 @@ footer .lbl{color:#7E9189}
     <p>Send the short version &mdash; the record type, the error, or the report that won't tie out. I'll tell you whether it's a two-hour fix or a project, and what it would take either way.</p>
     <div class="actions">
       <a class="btn" href="mailto:renee@dteadvisoryservices.com?subject=NetSuite%20project">renee@dteadvisoryservices.com</a>
+      <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=renee@dteadvisoryservices.com&amp;su=NetSuite%20project" target="_blank" rel="noopener">Open in Gmail</a>
+      <a class="btn ghost" id="copymail" href="#" data-mail="renee@dteadvisoryservices.com">Copy address</a>
       <a class="btn ghost" href="tel:+19316298765">931.629.8765</a>
     </div>
   </div>
@@ -326,5 +338,21 @@ footer .lbl{color:#7E9189}
   </div>
 </footer>
 
+<script>
+(function(){
+  var b=document.getElementById('copymail');
+  if(!b)return;
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=b.textContent;
+    navigator.clipboard.writeText(b.dataset.mail).then(function(){
+      b.textContent='Copied';
+      setTimeout(function(){b.textContent=t;},1800);
+    }).catch(function(){
+      b.textContent=b.dataset.mail;
+    });
+  });
+})();
+</script>
 </body>
 </html>
