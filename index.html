@@ -7,7 +7,7 @@
 <meta name="description" content="NetSuite consultant and developer. SuiteScript 2.1, SuiteQL, WMS and Ship Central, OneWorld migrations, close automation. Former CFO and CPA who writes production code.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#EEF1EE;
@@ -19,7 +19,7 @@
   --tick:#8E2C22;
   --cell:#DCE6DE;
   --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
-  --serif:"Fraunces",Georgia,serif;
+  --serif:"Bodoni Moda",Georgia,serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   --pad:clamp(20px,5vw,56px);
 }
@@ -28,7 +28,6 @@ html{-webkit-text-size-adjust:100%}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--sans);font-size:17px;line-height:1.55;
-  -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
 a{color:inherit}
@@ -54,9 +53,11 @@ a{color:inherit}
 .hero{padding:clamp(44px,8vw,96px) 0 clamp(36px,6vw,64px)}
 .hero-top{display:grid;grid-template-columns:1fr}
 .hero h1{
-  font-family:var(--serif);font-weight:600;
-  font-size:clamp(42px,11vw,120px);line-height:1.0;
-  letter-spacing:-.02em;margin:0 0 6px;
+  font-family:var(--serif);font-weight:500;
+  font-optical-sizing:none;font-variation-settings:"opsz" 14,"wght" 550;
+  -webkit-font-smoothing:auto;
+  font-size:clamp(44px,11.5vw,116px);line-height:1.0;
+  letter-spacing:-.015em;margin:0 0 6px;
   overflow-wrap:break-word;padding-bottom:.05em;
 }
 .hero h1 .post{
@@ -113,7 +114,9 @@ a:focus-visible,.row:focus-within{outline:2px solid var(--green);outline-offset:
 .sec-head{margin-bottom:clamp(28px,4vw,44px)}
 .sec-head h2{
   font-family:var(--serif);font-weight:600;
-  font-size:clamp(28px,5vw,54px);line-height:1.1;letter-spacing:-.02em;
+  font-optical-sizing:none;font-variation-settings:"opsz" 12,"wght" 600;
+  -webkit-font-smoothing:auto;
+  font-size:clamp(28px,5vw,54px);line-height:1.12;letter-spacing:-.02em;
   margin:12px 0 0;max-width:30ch;
 }
 
@@ -145,7 +148,10 @@ a:focus-visible,.row:focus-within{outline:2px solid var(--green);outline-offset:
 .contact{background:var(--ink);color:var(--paper);margin-top:0}
 .contact .wrap{padding-top:clamp(56px,8vw,96px);padding-bottom:clamp(56px,8vw,96px)}
 .contact h2{
-  font-family:var(--serif);font-weight:600;font-size:clamp(32px,6.5vw,68px);
+  font-family:var(--serif);font-weight:600;
+  font-optical-sizing:none;font-variation-settings:"opsz" 12,"wght" 600;
+  -webkit-font-smoothing:auto;
+  font-size:clamp(32px,6.5vw,68px);
   line-height:1.05;margin:14px 0 22px;max-width:20ch;
 }
 .contact .lbl{color:#8FA69B}
